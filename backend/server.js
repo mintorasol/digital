@@ -40,18 +40,28 @@ async function sendOrderToTelegram(orderData) {
             paypalEmail
         } = orderData;
 
-        // Format product details
+        // Validate and format product details
         let productsText = '';
         let totalItems = 0;
-        items.forEach((item, index) => {
-            const itemTotal = (item.price * item.quantity).toFixed(2);
-            productsText += `${index + 1}. ${item.name}\n   Qty: ${item.quantity} × $${item.price} = $${itemTotal}\n\n`;
-            totalItems += item.quantity;
-        });
+        
+        if (items && Array.isArray(items)) {
+            items.forEach((item, index) => {
+                const price = parseFloat(item.price) || 0;
+                const quantity = parseInt(item.quantity) || 0;
+                const itemTotal = (price * quantity).toFixed(2);
+                
+                productsText += `${index + 1}. ${item.name || 'Unknown Product'}\n`;
+                productsText += `   Qty: ${quantity} × $${price.toFixed(2)} = $${itemTotal}\n\n`;
+                totalItems += quantity;
+            });
+        }
 
-        // Create order message
-        const message = `
-📦 *NEW ORDER RECEIVED*
+        // Format total amount safely
+        const formattedTotal = parseFloat(totalAmount || 0).toFixed(2);
+        const displayPayPal = paypalEmail || 'Not provided';
+
+        // Create order message with better formatting
+        const message = `📦 *NEW ORDER RECEIVED*
 
 🎯 *Order ID:* \`${orderId}\`
 
@@ -63,12 +73,11 @@ async function sendOrderToTelegram(orderData) {
 ${productsText}
 📊 *Order Summary:*
    Total Items: ${totalItems}
-   Total Amount: $${totalAmount}
-   PayPal: ${paypalEmail}
+   Total Amount: $${formattedTotal}
+   PayPal Email: ${displayPayPal}
 
-✅ Payment Status: COMPLETED
-🕐 Time: ${new Date().toLocaleString()}
-`;
+✅ *Payment Status:* COMPLETED
+🕐 *Time:* ${new Date().toLocaleString()}`;
 
         console.log('📤 Sending to Telegram...');
         console.log('Bot Token:', process.env.TELEGRAM_BOT_TOKEN ? '✓ Set' : '❌ NOT SET');
