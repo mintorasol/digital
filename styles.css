@@ -918,6 +918,24 @@ a.btn:hover {
         font-size: 36px;
     }
 
+    .card-1 {
+        top: -10px;
+        left: 10% !important;
+        right: auto;
+    }
+
+    .card-2 {
+        top: 60px;
+        right: 10% !important;
+        left: auto;
+    }
+
+    .card-3 {
+        bottom: -20px;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
     .nav-links {
         display: none;
     }
