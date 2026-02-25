@@ -909,7 +909,7 @@ a.btn:hover {
     }
 
     .hero-illustration {
-        height: 200px;
+        height: 280px;
     }
 
     .floating-card {
@@ -925,15 +925,15 @@ a.btn:hover {
     }
 
     .card-2 {
-        top: 40px;
+        top: 20px;
         right: 5% !important;
         left: auto;
     }
 
     .card-3 {
-        bottom: -30px;
+        bottom: 10px;
         left: 50% !important;
-        transform: translateX(-50%);
+        transform: translateX(-50%) !important;
     }
 
     .nav-links {
