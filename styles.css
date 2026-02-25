@@ -919,19 +919,19 @@ a.btn:hover {
     }
 
     .card-1 {
-        top: -10px;
-        left: 10% !important;
+        top: 0;
+        left: 5% !important;
         right: auto;
     }
 
     .card-2 {
-        top: 60px;
-        right: 10% !important;
+        top: 40px;
+        right: 5% !important;
         left: auto;
     }
 
     .card-3 {
-        bottom: -20px;
+        bottom: -30px;
         left: 50% !important;
         transform: translateX(-50%);
     }
