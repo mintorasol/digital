@@ -5,7 +5,7 @@
 // Copy .env.example to .env and update the values below
 const CONFIG = {
     // Your PayPal email where payments will be received
-    PAYPAL_EMAIL: localStorage.getItem('paypal_email') || 'your-paypal-email@example.com',
+    PAYPAL_EMAIL: localStorage.getItem('paypal_email') || 'rimiliasse@gmail.com',
     
     // Store name
     STORE_NAME: 'LicenseHub',
