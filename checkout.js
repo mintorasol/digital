@@ -353,14 +353,19 @@ function completePayment(firstName, lastName, email, paymentMethod) {
 async function sendOrderToBackend(order) {
     try {
         console.log('📤 Sending order to backend:', order.orderId);
-        const backendUrl = 'http://localhost:5001/api/process-order';
+        const backendUrl = (typeof CONFIG !== 'undefined') ? CONFIG.BACKEND_URL : 'http://localhost:5000';
+        const apiUrl = `${backendUrl}/api/payment/capture`;
+        console.log('🔗 API URL:', apiUrl);
         
-        const response = await fetch(backendUrl, {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(order)
+            body: JSON.stringify({
+                paypalOrderId: order.orderId,
+                orderData: order
+            })
         });
         
         const result = await response.json();
@@ -372,7 +377,7 @@ async function sendOrderToBackend(order) {
         }
     } catch (error) {
         console.warn('⚠ Could not reach backend:', error.message);
-        console.log('ℹ Make sure backend server is running on http://localhost:5001');
+        console.error('❌ Error details:', error);
     }
 }
 
