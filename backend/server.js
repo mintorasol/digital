@@ -419,6 +419,49 @@ app.get('/api/config/paypal', (req, res) => {
     });
 });
 
+// TEST ENDPOINT: Simulate a payment for testing (remove in production)
+app.post('/api/test/payment', async (req, res) => {
+    try {
+        const testOrder = {
+            orderId: `TEST-${Date.now()}`,
+            firstName: 'Test',
+            lastName: 'Order',
+            email: 'test@example.com',
+            items: [
+                {
+                    name: 'Windows 11 Pro',
+                    price: 49.99,
+                    quantity: 1
+                },
+                {
+                    name: 'Microsoft Office 365',
+                    price: 39.99,
+                    quantity: 1
+                }
+            ],
+            totalAmount: 89.98,
+            paypalEmail: process.env.PAYPAL_EMAIL || 'rimiliasse@gmail.com'
+        };
+
+        console.log('🧪 TEST: Sending order to Telegram...');
+        const telegramSent = await sendOrderToTelegram(testOrder);
+
+        res.json({
+            success: true,
+            message: 'Test order sent to Telegram',
+            orderId: testOrder.orderId,
+            telegramSent: telegramSent
+        });
+    } catch (error) {
+        console.error('❌ Test payment error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Test payment failed',
+            error: error.message
+        });
+    }
+});
+
 // =============================================
 // START SERVER
 // =============================================
