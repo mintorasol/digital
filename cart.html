@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | License Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Breadcrumb Styles */
+        .breadcrumb-section {
+            padding: 16px 0;
+            background: var(--color-light);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+            color: var(--color-primary-dark);
+        }
+
+        .breadcrumb span {
+            color: var(--color-text-light);
+            font-weight: 400;
+        }
+
+        .breadcrumb span:last-child {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumb {
+                font-size: 13px;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .breadcrumb {
+                font-size: 12px;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> LicenseHub
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Shopping Cart</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <h1 class="page-title">Shopping Cart</h1>
+            
+            <div class="cart-container">
+                <!-- Cart Items -->
+                <div class="cart-items-column">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Dynamically populated -->
+                    </div>
+                    <div id="emptyCartMessage" style="text-align: center; padding: 40px; display: none;">
+                        <i class="fas fa-shopping-cart" style="font-size: 48px; color: var(--color-primary); margin-bottom: 20px; display: block;"></i>
+                        <h3>Your cart is empty</h3>
+                        <p style="color: var(--color-text-light); margin-bottom: 20px;">Start shopping to add items to your cart</p>
+                        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        <div id="orderSummaryItems">
+                            <!-- Dynamically populated with product items -->
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row" style="border-top: 2px solid var(--color-border); padding-top: 16px; margin-top: 16px;">
+                            <strong>Total:</strong>
+                            <strong id="total" style="color: var(--color-primary); font-size: 18px;">$0.00</strong>
+                        </div>
+                        <button class="btn btn-primary btn-checkout" id="checkoutBtn" style="width: 100%; margin-top: 20px;">
+                            Proceed to Checkout
+                        </button>
+                        <a href="products.html" class="btn btn-secondary" style="width: 100%; margin-top: 12px; text-align: center;">
+                            Continue Shopping
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-box">
+                        <h4 style="margin-bottom: 16px;">Why Shop with Us?</h4>
+                        <div class="trust-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Genuine Keys</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Instant Delivery</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Secure Checkout</span>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-Day Refund</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">About LicenseHub</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="return-policy.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="contact-links">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:support@licensehub.com" class="footer-email">support@licensehub.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LicenseHub. All rights reserved. Licensed products provided are legitimate and authorized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

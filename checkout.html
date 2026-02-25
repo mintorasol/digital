@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | License Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .checkout-form-section {
+            background: var(--color-white);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+        }
+
+        .checkout-form-section h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: var(--color-text);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-row-full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1);
+        }
+
+        .payment-methods {
+            margin-bottom: 30px;
+        }
+
+        .payment-methods h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--color-text);
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .payment-option:hover {
+            border-color: var(--color-primary);
+            background: var(--color-light);
+        }
+
+        .payment-option input[type='radio'] {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .payment-option input[type='radio']:checked {
+            accent-color: var(--color-primary);
+        }
+
+        .payment-option.selected {
+            border-color: var(--color-primary);
+            background: linear-gradient(135deg, #FFF8F3, #FFE8D1);
+        }
+
+        .checkout-summary {
+            background: var(--color-light);
+            padding: 30px;
+            border-radius: 12px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .checkout-summary h3 {
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: var(--color-text);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .item-price {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .summary-total {
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-place-order {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            background: #F0FDF4;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #166534;
+        }
+
+        .security-badge i {
+            color: #10B981;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb-section {
+            padding: 16px 0;
+            background: var(--color-light);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+            color: var(--color-primary-dark);
+        }
+
+        .breadcrumb span {
+            color: var(--color-text-light);
+            font-weight: 400;
+        }
+
+        .breadcrumb span:last-child {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-summary {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> LicenseHub
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="cart.html">Cart</a>
+                <span>/</span>
+                <span>Checkout</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1 class="page-title">Secure Checkout</h1>
+
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <div class="checkout-form-section">
+                    <h2>Billing Information</h2>
+
+                    <form id="checkoutForm">
+                        <!-- Personal Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="firstName" 
+                                    name="firstName" 
+                                    placeholder="John"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="lastName" 
+                                    name="lastName" 
+                                    placeholder="Doe"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="john@example.com"
+                                required
+                            >
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="payment-methods">
+                            <h3>Payment Method</h3>
+                            
+                            <label class="payment-option selected">
+                                <input 
+                                    type="radio" 
+                                    name="paymentMethod" 
+                                    value="paypal" 
+                                    checked
+                                    required
+                                >
+                                <i class="fab fa-cc-paypal" style="font-size: 24px; color: #003087; margin-right: 12px;"></i>
+                                <span style="font-weight: 600;">PayPal</span>
+                            </label>
+                        </div>
+
+                        <!-- PayPal Button Container -->
+                        <div id="paypal-button-container" style="margin: 24px 0; padding: 20px 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);"></div>
+
+                        <!-- Terms & Conditions Message -->
+                        <div class="form-group">
+                            <p style="color: var(--color-text-light); font-size: 14px; margin: 0;">
+                                <i class="fas fa-check-circle" style="color: #10B981; margin-right: 8px;"></i>
+                                I agree to the Terms &amp; Conditions and Privacy Policy
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-place-order">
+                            <i class="fas fa-lock" style="margin-right: 8px;"></i>Complete Payment
+                        </button>
+
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            Your payment is secure and encrypted
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="checkout-summary">
+                    <h3>Order Summary</h3>
+                    <div id="orderSummary">
+                        <!-- Dynamically populated -->
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="totalPrice">$0.00</span>
+                    </div>
+
+                        <div style="margin-top: 30px; padding-top: 30px; border-top: 2px solid var(--color-border);">
+                        <p style="font-size: 12px; color: var(--color-text-light); margin-top: 12px;">Payment Methods Accepted:</p>
+                        <div style="display: flex; gap: 12px; font-size: 28px;">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-stripe"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">About LicenseHub</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="return-policy.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="contact-links">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:support@licensehub.com" class="footer-email">support@licensehub.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LicenseHub. All rights reserved. Licensed products provided are legitimate and authorized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="products-data.js"></script>
+    <!-- PayPal SDK for real payment processing -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeoeSbUJo4OTzUeaUphXPDLS4G99ga_9hPH1XVr5ueiKkkKbf7ZGHA1pbw5up1GXEM5XOyLCdTkKTAzb&currency=USD"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

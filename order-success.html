@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful | License Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 40px;
+            color: white;
+        }
+
+        .success-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 16px;
+        }
+
+        .success-message {
+            font-size: 16px;
+            color: var(--color-text-light);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .order-details {
+            background: var(--color-light);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .success-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .next-steps {
+            background: var(--color-white);
+            border: 2px solid var(--color-primary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            color: var(--color-text);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--color-text-light);
+            font-size: 14px;
+        }
+
+        .step-content strong {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> LicenseHub
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Success Section -->
+    <section class="success-section">
+        <div class="container">
+            <div class="success-container">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                
+                <h1 class="success-title">Order Confirmed! 🎉</h1>
+                <p class="success-message">
+                    Thank you for your purchase! Your license key will be sent to your email shortly.
+                </p>
+
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Order ID:</span>
+                        <span class="detail-value" id="orderId">ORD-XXXXXXXXX</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Total Amount:</span>
+                        <span class="detail-value" id="totalAmount">$0.00</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Email:</span>
+                        <span class="detail-value" id="customerEmail">customer@example.com</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date & Time:</span>
+                        <span class="detail-value" id="orderDate">--</span>
+                    </div>
+                </div>
+
+                <div class="success-buttons">
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <a href="products.html" class="btn btn-secondary">Continue Shopping</a>
+                </div>
+
+                <div class="next-steps">
+                    <h3>What Happens Next?</h3>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Check Your Email</strong>
+                            <p>Look for an email from LicenseHub with your license key and installation instructions.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Verify Email (Optional)</strong>
+                            <p>If you don't receive the email, check your spam folder or contact our support team.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Activate Your Product</strong>
+                            <p>Follow the included instructions to activate your software license on your device.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Enjoy Your License</strong>
+                            <p>Start using your genuine software immediately with lifetime activation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">About LicenseHub</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="return-policy.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="contact-links">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:support@licensehub.com" class="footer-email">support@licensehub.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LicenseHub. All rights reserved. Licensed products provided are legitimate and authorized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="order-success.js"></script>
+</body>
+</html>

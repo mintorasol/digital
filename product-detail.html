@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | License Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> LicenseHub
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="products.html" id="categoryLink">Products</a>
+                <span>/</span>
+                <span id="productBreadcrumb">Product Name</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="product-hero-content">
+                <!-- Product Image -->
+                <div class="product-image-section">
+                    <div class="product-image-large" id="productImage">
+                        🎨
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-section">
+                    <div class="category-label" id="categoryLabel">Adobe</div>
+                    <h1 class="product-title" id="productTitle">Product Name</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">(2,500+ verified purchases)</span>
+                    </div>
+
+                    <div class="product-price-section">
+                        <span class="price" id="productPrice">$99.99</span>
+                        <span class="price-note">Lifetime license • One-time payment</span>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="quantity-section">
+                        <label>Quantity:</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qtyMinus">−</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10">
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button class="btn btn-primary btn-large" id="addToCartBtn">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+
+                    <!-- Checkout Security -->
+                    <div class="checkout-security">
+                        <div class="security-title">
+                            <i class="fas fa-lock"></i> Guaranteed Safe Checkout
+                        </div>
+                        <div class="payment-methods">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-stripe"></i>
+                        </div>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="indicator">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Genuine</span>
+                        </div>
+                        <div class="indicator">
+                            <i class="fas fa-bolt"></i>
+                            <span>Instant Delivery</span>
+                        </div>
+                        <div class="indicator">
+                            <i class="fas fa-undo"></i>
+                            <span>30-Day Refund</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Description Section (Visible by Default) -->
+    <section class="full-description-section">
+        <div class="container">
+            <h2>Product Overview</h2>
+            <div class="description-text" id="fullDescription">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section (Visible by Default) -->
+    <section class="product-specs-section">
+        <div class="container">
+            <h2>Product Specifications</h2>
+            <div class="specs-grid" id="fullSpecsGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Navigation -->
+    <section class="product-tabs-section">
+        <div class="container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" data-tab="details">
+                    <i class="fas fa-list"></i> Details
+                </button>
+                <button class="tab-btn" data-tab="description">
+                    <i class="fas fa-file-alt"></i> Description
+                </button>
+                <button class="tab-btn" data-tab="requirements">
+                    <i class="fas fa-server"></i> Requirements
+                </button>
+                <button class="tab-btn" data-tab="why">
+                    <i class="fas fa-star"></i> Why Choose Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Content -->
+    <section class="product-tabs-content">
+        <div class="container">
+            
+            <!-- Details Tab -->
+            <div class="tab-content active" id="details-tab">
+                <h2>Product Details</h2>
+                <div class="details-grid" id="detailsGrid">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Description Tab -->
+            <div class="tab-content" id="description-tab">
+                <h2>Description</h2>
+                <div class="description-content" id="descriptionContent">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Requirements Tab -->
+            <div class="tab-content" id="requirements-tab">
+                <h2>System Requirements</h2>
+                <div class="requirements-list" id="requirementsList">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Why Choose Us Tab -->
+            <div class="tab-content" id="why-tab">
+                <h2>Why Choose LicenseHub?</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>100% Genuine</h3>
+                        <p>All licenses are authentic and directly from publishers</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Cheapest Price</h3>
+                        <p>Best prices guaranteed - we match or beat any offer</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Instant Delivery</h3>
+                        <p>Get your license key within minutes of purchase</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Expert support team ready to help anytime</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Safe & Secure</h3>
+                        <p>SSL encrypted checkout with industry-standard security</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3>14-Day Money Back</h3>
+                        <p>Not satisfied? Full refund within 14 days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2>Related Products</h2>
+            <div class="related-products-grid" id="relatedProductsGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">About LicenseHub</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="return-policy.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="contact-links">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:support@licensehub.com" class="footer-email">support@licensehub.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LicenseHub. All rights reserved. Licensed products provided are legitimate and authorized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="product-detail.js"></script>
+</body>
+</html>

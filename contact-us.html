@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LicenseHub - Support & Customer Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> LicenseHub
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact-us.html" class="active">Contact Us</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+                <p>Have questions? We're here to help! Get in touch with our support team.</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>Send us an email anytime:</p>
+                        <a href="mailto:support@licensehub.com" class="contact-link">support@licensehub.com</a>
+                        <p class="response-time">⏱️ We respond within 24 hours</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Response Time</h3>
+                        <p>Our support team is available:</p>
+                        <p class="support-hours">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                        <p class="support-hours">Saturday: 10:00 AM - 4:00 PM EST</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>What We Help With</h3>
+                        <ul class="help-list">
+                            <li>License key delivery</li>
+                            <li>Product questions</li>
+                            <li>Technical support</li>
+                            <li>Billing inquiries</li>
+                            <li>Order tracking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="support">Technical Support</option>
+                                <option value="billing">Billing & Payments</option>
+                                <option value="delivery">License Delivery</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Please describe your issue or question in detail..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="subscribe" name="subscribe">
+                            <label for="subscribe">Subscribe to our newsletter for offers and updates</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <p class="form-note">📧 We'll respond to your message at: <strong id="confirmEmail">you@example.com</strong></p>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="return-policy.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="contact-links">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:support@licensehub.com" class="footer-email">support@licensehub.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LicenseHub. All rights reserved. Licensed products provided are legitimate and authorized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Update cart badge
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+            const badge = document.getElementById('cartCount');
+            if (badge) {
+                badge.textContent = cart.length;
+            }
+        }
+
+        // Handle contact form
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const category = document.getElementById('category').value;
+            const message = document.getElementById('message').value;
+
+            // Show loading state
+            const formMessage = document.getElementById('formMessage');
+            formMessage.innerHTML = `
+                <div style="text-align: center; color: var(--color-primary);">
+                    <i class="fas fa-spinner fa-spin"></i> Sending your message...
+                </div>
+            `;
+
+            try {
+                // Send to backend
+                const backendUrl = (typeof CONFIG !== 'undefined') ? CONFIG.BACKEND_URL : 'http://localhost:5000';
+                const response = await fetch(`${backendUrl}/api/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        subject,
+                        category,
+                        message
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Show success message
+                    formMessage.innerHTML = `
+                        <div class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <strong>Message Sent Successfully!</strong>
+                            <p>Thank you for contacting us, ${name}. We'll respond to <strong>${email}</strong> within 24 hours.</p>
+                        </div>
+                    `;
+
+                    // Reset form
+                    this.reset();
+                    updateConfirmEmail();
+
+                    // Clear message after 7 seconds
+                    setTimeout(() => {
+                        formMessage.innerHTML = '';
+                    }, 7000);
+                } else {
+                    // Show error message
+                    formMessage.innerHTML = `
+                        <div style="background: rgba(255, 0, 0, 0.1); border-left: 4px solid #f44336; padding: 15px; border-radius: 8px; color: #f44336;">
+                            <i class="fas fa-exclamation-circle"></i> <strong>Error:</strong> ${result.message || 'Failed to send message. Please try again.'}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Contact form error:', error);
+                formMessage.innerHTML = `
+                    <div style="background: rgba(255, 0, 0, 0.1); border-left: 4px solid #f44336; padding: 15px; border-radius: 8px; color: #f44336;">
+                        <i class="fas fa-exclamation-circle"></i> <strong>Error:</strong> Could not send message. Please make sure the server is running.
+                    </div>
+                `;
+            }
+        });
+
+        // Update email in form note as user types
+        function updateConfirmEmail() {
+            const email = document.getElementById('email').value;
+            const confirmEmail = document.getElementById('confirmEmail');
+            if (email) {
+                confirmEmail.textContent = email;
+            } else {
+                confirmEmail.textContent = 'you@example.com';
+            }
+        }
+
+        document.getElementById('email').addEventListener('input', updateConfirmEmail);
+
+        // Initialize
+        updateCartBadge();
+    </script>
+</body>
+</html>

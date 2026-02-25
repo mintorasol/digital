@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | License Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> LicenseHub
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#why-us">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Category Filter -->
+    <section class="products-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Choose from genuine Microsoft, Adobe, and Windows licenses</p>
+            
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">
+                    <i class="fas fa-th"></i> All Products
+                </button>
+                <button class="filter-btn" data-category="windows">
+                    <i class="fab fa-windows"></i> Windows
+                </button>
+                <button class="filter-btn" data-category="office">
+                    <i class="fab fa-microsoft"></i> Microsoft Office
+                </button>
+                <button class="filter-btn" data-category="adobe">
+                    <i class="fas fa-palette"></i> Adobe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="products-list">
+                <!-- WINDOWS PRODUCTS -->
+                <div class="product-item" data-category="windows">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/microsoft-windows.svg" alt="Windows 10">
+                    </div>
+                    <span class="category-badge" style="margin: 0 24px;">Windows</span>
+                    <h3>Windows 10 Professional License Key</h3>
+                    <p class="product-description">Genuine permanent license for Windows 10 Pro</p>
+                    <div class="product-footer">
+                        <span class="price">$18.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="windows">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/microsoft-windows.svg" alt="Windows 11">
+                    </div>
+                    <span class="category-badge" style="margin: 0 24px;">Windows</span>
+                    <h3>Windows 11 Professional License Key</h3>
+                    <p class="product-description">Genuine permanent license for Windows 11 Pro</p>
+                    <div class="product-footer">
+                        <span class="price">$25.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="windows">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/microsoft-windows.svg" alt="Windows 10">
+                    </div>
+                    <span class="category-badge" style="margin: 0 24px;">Windows</span>
+                    <h3>Windows 10 Home License Key</h3>
+                    <p class="product-description">Genuine permanent license for Windows 10 Home</p>
+                    <div class="product-footer">
+                        <span class="price">$16.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="windows">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/microsoft-windows.svg" alt="Windows 11">
+                    </div>
+                    <span class="category-badge" style="margin: 0 24px;">Windows</span>
+                    <h3>Windows 11 Home License Key</h3>
+                    <p class="product-description">Genuine permanent license for Windows 11 Home</p>
+                    <div class="product-footer">
+                        <span class="price">$23.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="windows">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/microsoft-windows.svg" alt="Windows 10">
+                    </div>
+                    <span class="category-badge" style="margin: 0 24px;">Windows</span>
+                    <h3>Windows 10 Enterprise License Key</h3>
+                    <p class="product-description">Genuine permanent license for Windows 10 Enterprise</p>
+                    <div class="product-footer">
+                        <span class="price">$36.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="windows">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/microsoft-windows.svg" alt="Windows 11">
+                    </div>
+                    <span class="category-badge" style="margin: 0 24px;">Windows</span>
+                    <h3>Windows 11 Enterprise License Key</h3>
+                    <p class="product-description">Genuine permanent license for Windows 11 Enterprise</p>
+                    <div class="product-footer">
+                        <span class="price">$45.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- MICROSOFT OFFICE PRODUCTS -->
+                <div class="product-item" data-category="office">
+                    <div class="product-header">
+                        <img src="https://image2url.com/r2/default/images/1771902834848-ab45d165-6bea-435a-b696-762b93abcde4.png" alt="Office 2021">
+                    </div>
+                    <span class="category-badge office" style="margin: 0 24px;">Office</span>
+                    <h3>Office 2021 Professional Plus License Key For Windows</h3>
+                    <p class="product-description">Complete Office suite including Word, Excel, PowerPoint & more</p>
+                    <div class="product-footer">
+                        <span class="price">$24.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="office">
+                    <div class="product-header">
+                        <img src="https://image2url.com/r2/default/images/1771902834848-ab45d165-6bea-435a-b696-762b93abcde4.png" alt="Office 2019">
+                    </div>
+                    <span class="category-badge office" style="margin: 0 24px;">Office</span>
+                    <h3>Office 2019 Professional Plus License Key For Windows</h3>
+                    <p class="product-description">Professional Office 2019 suite for Windows</p>
+                    <div class="product-footer">
+                        <span class="price">$19.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="office">
+                    <div class="product-header">
+                        <img src="https://image2url.com/r2/default/images/1771902834848-ab45d165-6bea-435a-b696-762b93abcde4.png" alt="Office 365">
+                    </div>
+                    <span class="category-badge office" style="margin: 0 24px;">Office</span>
+                    <h3>Office 365 Professional Plus Account For Windows & Mac</h3>
+                    <p class="product-description">Cloud-based Office with 1TB OneDrive storage - works on all devices</p>
+                    <div class="product-footer">
+                        <span class="price">$22.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="office">
+                    <div class="product-header">
+                        <img src="https://image2url.com/r2/default/images/1771902834848-ab45d165-6bea-435a-b696-762b93abcde4.png" alt="Office 2016">
+                    </div>
+                    <span class="category-badge office" style="margin: 0 24px;">Office</span>
+                    <h3>Office 2016 Professional Plus License Key For Windows</h3>
+                    <p class="product-description">Classic Office 2016 Professional Plus for Windows</p>
+                    <div class="product-footer">
+                        <span class="price">$15.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- ADOBE PRODUCTS -->
+                <div class="product-item" data-category="adobe">
+                    <div class="product-header">
+                        <img src="https://image2url.com/r2/default/images/1771902679646-a95b3950-053b-4161-acde-7f95269264ad.png" alt="Adobe Acrobat">
+                    </div>
+                    <span class="category-badge adobe" style="margin: 0 24px;">Adobe</span>
+                    <h3>Adobe Acrobat Pro DC 2022 With Lifetime License For Windows</h3>
+                    <p class="product-description">Professional PDF editing and management with lifetime activation</p>
+                    <div class="product-footer">
+                        <span class="price">$50.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="adobe">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/adobe-photoshop.svg" alt="Adobe Photoshop">
+                    </div>
+                    <span class="category-badge adobe" style="margin: 0 24px;">Adobe</span>
+                    <h3>Adobe Photoshop 2022 With Lifetime License For Windows</h3>
+                    <p class="product-description">Professional image editing software with lifetime activation</p>
+                    <div class="product-footer">
+                        <span class="price">$50.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="adobe">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/adobe-after-effects.svg" alt="Adobe After Effects">
+                    </div>
+                    <span class="category-badge adobe" style="margin: 0 24px;">Adobe</span>
+                    <h3>Adobe After Effects 2022 With Lifetime License For Windows</h3>
+                    <p class="product-description">Motion graphics and visual effects software with lifetime activation</p>
+                    <div class="product-footer">
+                        <span class="price">$0.5</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="adobe">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/adobe-premiere.svg" alt="Adobe Premiere Pro">
+                    </div>
+                    <span class="category-badge adobe" style="margin: 0 24px;">Adobe</span>
+                    <h3>Adobe Premiere Pro 2022 With Lifetime License For Windows</h3>
+                    <p class="product-description">Professional video editing software with lifetime activation</p>
+                    <div class="product-footer">
+                        <span class="price">$49.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="adobe">
+                    <div class="product-header">
+                        <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/adobe-illustrator.svg" alt="Adobe Illustrator">
+                    </div>
+                    <span class="category-badge adobe" style="margin: 0 24px;">Adobe</span>
+                    <h3>Adobe Illustrator 2022 With Lifetime License For Windows</h3>
+                    <p class="product-description">Vector graphics design software with lifetime activation</p>
+                    <div class="product-footer">
+                        <span class="price">$49.99</span>
+                        <button class="btn btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">About LicenseHub</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="return-policy.html">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="contact-links">
+                        <p><strong>📧 Email:</strong></p>
+                        <a href="mailto:support@licensehub.com" class="footer-email">support@licensehub.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LicenseHub. All rights reserved. Licensed products provided are legitimate and authorized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script src="products-script.js"></script>
+</body>
+</html>

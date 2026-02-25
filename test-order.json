@@ -1,0 +1,27 @@
+{
+  "orderId": "TEST-ORDER-001",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "customer@example.com",
+  "items": [
+    {
+      "productId": 1,
+      "name": "Windows 11 Pro",
+      "price": 49.99,
+      "quantity": 1,
+      "itemTotal": 49.99
+    },
+    {
+      "productId": 2,
+      "name": "Microsoft Office 365",
+      "price": 89.99,
+      "quantity": 1,
+      "itemTotal": 89.99
+    }
+  ],
+  "totalAmount": 139.98,
+  "totalItems": 2,
+  "date": "02/23/2026 10:30:00",
+  "status": "confirmed",
+  "paymentMethod": "paypal"
+}
