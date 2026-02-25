@@ -22,8 +22,8 @@ const CONFIG = {
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
             return 'http://localhost:5000';
         }
-        // Otherwise, use deployed backend (update this URL to your Render/deployed backend URL)
-        return localStorage.getItem('backend_url') || 'https://your-backend-url.onrender.com';
+        // Otherwise, use deployed backend
+        return localStorage.getItem('backend_url') || 'https://digital-production-4de3.up.railway.app';
     })()
 };
 
