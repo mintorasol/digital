@@ -932,8 +932,8 @@ a.btn:hover {
 
     .card-3 {
         bottom: 10px;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        left: calc(50% - 40px) !important;
+        right: auto;
     }
 
     .nav-links {
